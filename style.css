@@ -1,0 +1,148 @@
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+ul {
+    list-style:none;
+    padding: 0;
+    text-align: left;
+}
+
+ul li{
+    padding-bottom: 1em;
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+    line-height: 2.1ex;
+    position: absolute;
+    left: -999em;
+ }
+
+ input[type="checkbox"] + label {
+     position: relative;
+     overflow: hidden;
+     cursor: pointer;
+ }
+
+ 
+input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    vertical-align: -25%;
+    height: 2ex;
+    width: 2ex;
+    background-color: white;
+    border: 1px solid rgb(166, 166, 166);
+    border-radius: 4px;
+    margin-right: 0.5em;
+ }
+
+input[type=checkbox]:checked + label{
+    text-decoration: line-through;
+    color:rgba(255,255,255,0.5)
+}
+
+input[type="checkbox"]:checked + label::before {
+    background-color: rgba(255,255,255,0.5);
+}
+
+input[type="checkbox"]:checked + label::after {
+    content: '';
+    position: absolute;
+    width: 1.2ex;
+    height: 0.4ex;
+    background: rgba(0, 0, 0, 0);
+    top: 0.9ex;
+    left: 0.4ex;
+    border: 3px solid black;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+ }
+
+.hidden {
+    display: none;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url("img/1.jpg");
+    background-size : cover;
+    background-repeat : no-repeat;
+    color: white;
+}
+
+.center {
+    margin: auto;
+    text-align:center;
+}
+
+.clock-div span {
+    font-size: 7em;
+    font-weight: bold;
+}
+
+.greeting-div {
+    margin-top: 1em;
+}
+
+#greeting {
+    color: beige;
+    font-size: 2.5em;
+    margin-bottom: 0;
+    margin-top:0;
+}
+
+.todo-div {
+    margin-top: 2em;
+}
+
+input[type=text]{
+    border: 0;
+    outline: none;
+    height: auto;
+    line-height: normal;
+    padding: .8em .5em;
+    border-radius: 1em;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size:1.1em;
+    width: 100%;
+}
+
+input[type=text]::placeholder{
+    color: white;
+    opacity: 0.7;
+}
+
+.weather-div {
+    margin-left:auto;
+    margin-right:1em;
+    margin-top:1em;
+    font-size:1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+@keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .blink {
+    animation: blink-effect 1s step-end infinite;
+  }
